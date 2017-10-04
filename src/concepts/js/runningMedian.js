@@ -4,17 +4,17 @@
 */
 function median(list){
   var n = list.length;
-  if(list.length === 0){
+  if(n === 0){
   	return 0;
   }
   // even
-  else if(list.length % 2 === 0){
-	var median = list.length / 2;
+  else if(n % 2 === 0){
+	var median = n / 2;
     return (Math.round(((list[median] + list[median - 1]) / 2) * 10) / 10).toFixed(1);
   }
   // odd
   else{
-    return list[Math.floor(list.length / 2)].toFixed(1)
+    return list[Math.floor(n / 2)].toFixed(1);
   }
 }
 
@@ -25,7 +25,7 @@ function main() {
   var min = 0;
   var num;
   for(var a_i = 0; a_i < n; a_i++){
-    var num = parseInt(readLine());
+    num = parseInt(readLine());
     if(a_i == 0){
       min = max = num;
     }
