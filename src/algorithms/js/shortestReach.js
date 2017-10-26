@@ -5,9 +5,14 @@ class Node {
     this.distance = -1;
     this.visited = false;
   }
+  contains(node){
+    return this.edges.indexOf(node) !== -1;
+  }
   add (node) {
-    this.edges.push(node);
-    node.edges.push(this);
+    if(!this.contains(node)){
+      this.edges.push(node);
+      node.edges.push(this);
+    }
   }
 }
 
